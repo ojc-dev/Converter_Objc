@@ -11,11 +11,15 @@
 }
 
 - (void)viewDidLoad {
-	[super viewDidLoad];
-	self.displayLabel.text = @"0";
+    [super viewDidLoad];
+    self.displayLabel.text = @"0";
+    self.numberPad = [[NumberPad alloc] init];
 }
 
 - (IBAction)buttonTouched:(id)sender {
+    [self.numberPad buttonTouched:sender];
+    
+    self.displayLabel.text = self.numberPad.currentValue;
 }
 
 
